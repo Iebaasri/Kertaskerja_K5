@@ -1,0 +1,58 @@
+<html>
+<head>
+<title>Login</title>
+<style>
+body {
+    background-color: #80bfff;
+}
+p{
+    font-family: "candara";
+}
+
+h1{
+    font-family: "candara";
+}
+input[type=text], select {
+    width: 30%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+input[type=password], select {
+    width: 30%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+.button {
+    background-color: #66b3ff;
+    border: 1px solid #4da6ff;
+    color: black;
+    padding: 15px 32px;
+    text-align: center;
+    cursor: pointer;
+    text-decoration: none;
+
+}
+</style>
+</head>
+<center>
+<body>
+<form action="loginprocess_session.php" method="post">
+<h1><center>SIGN IN</center></h1>
+<input type="text" name="username" size="20" placeholder="MASUKKAN USERNAME ANDA"/>
+<br><br>
+<input type="password" name="password" size="20" placeholder="MASUKKAN PASSWORD ANDA"/>
+<br><br>
+<button class="button" type="submit" name="submit">Sign In</button>
+<br><br><br>
+<p>Tiada Akaun?</p> <a href="daftar.php"><p>signup disini</p></a>
+</form>
+</center>
+</html>

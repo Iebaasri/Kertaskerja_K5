@@ -1,0 +1,25 @@
+<html>
+<head>
+<title>Error</title>
+<style>
+body {
+    background-color: #80bfff;
+}
+</style>
+</head>
+ <?php
+include ('config.php');
+$username=$_POST['username'];
+$password=$_POST['password'];
+if ($username==TRUE&&$password==TRUE){
+echo "<br>";
+$query="insert into akaun values 
+('$username','$password')";
+
+header("location:login.php");
+}
+
+  else{
+  die ("Masukkan Username Dan Password!!<br><a href='daftar.php'> Daftar Semula </a>");}
+?>	 
+	 

@@ -1,0 +1,49 @@
+<html>
+<head>
+<title>Error</title>
+<style>
+body {
+    background-color: #80bfff;
+}
+</style>
+</head>
+<body>
+<?PHP
+session_start();
+$username=$_POST['username'];
+$password=$_POST['password'];
+if ($username && $password)
+{
+$server='localhost';
+$userid2='syahir';
+$password2='123456';
+$dbname='syahir';
+
+$conn=mysql_connect("$server","$userid2","$password2");
+mysql_select_db("$dbname",$conn) or die (mysql_error());
+$query=mysql_query("select * from akaun where username = '$username'");
+$numrows=mysql_num_rows($query);
+if ($numrows !=0)
+{
+while ($row=mysql_fetch_assoc($query))
+{
+$dbusername = $row['username'];
+$dbpassword = $row['password'];
+}
+if ($username==$dbusername&&$password==$dbpassword) 
+{
+$_SESSION['username']=$username;
+header( 'Location:kalkulator.php');
+}else
+  {echo " Password Anda Salah!! <br><a href='login.php'> Login Semula </a>";}
+  } //if 2
+  else
+  die ("Username Anda Salah!!<br><a href='login.php'> Login Semula </a>");
+  } // if 1
+  else
+  {
+  echo "Sila Masukkan Username Dan Password!!<br><a href='login.php'> Login Semula </a>";
+  }
+  ?>
+  </body>
+  </html>

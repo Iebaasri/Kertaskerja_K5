@@ -1,0 +1,11 @@
+<?php
+$server="localhost";
+$user="syahir";
+$password="123456";
+$db="syahir";
+
+$conn=mysql_connect("$server","$user","$password");
+
+$con= mysql_select_db("$db",$conn);
+
+?>

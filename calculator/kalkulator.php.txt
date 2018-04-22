@@ -1,0 +1,109 @@
+<html>
+<head>
+<title>Kalkulator</title>
+<style>
+body {
+    background-color: #80bfff;
+}
+h1{
+    font-family: "candara";
+}
+
+h2{
+    font-family: "candara";
+}
+
+p{
+    font-family: "candara";
+}
+
+input[type=text], select {
+    width: 30%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+a:link, a:visited {
+    background-color: #66b3ff;
+    color: black;
+    padding: 14px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+}
+
+
+a:hover, a:active {
+    background-color: #99ccff;
+}
+.button {
+    background-color: #66b3ff;
+    border: 1px solid #4da6ff;
+    color: black;
+    padding: 15px 32px;
+    text-align: center;
+    cursor: pointer;
+    text-decoration: none;
+
+}
+</style>
+</head>
+<body>
+<center>
+<h1>KALKULATOR</h1><br>
+<input type="text" id="no1" placeholder="NOMBOR PERTAMA"><br><br>
+<select id="operasi">
+  <option value="">Pilih Operasi
+  <option value="+">Tambah
+  <option value="-">Tolak
+  <option value="*">Darab
+  <option value="/">Bahagi
+</select><br><br>
+<input type="text" id="no2" placeholder="NOMBOR KEDUA"><br><br>
+<button onclick="kira()" style="width:375px;height:40px">=</button>
+<br><br>
+<form  method="post" action="pros_insert.php">
+<input type="text" name="result" id="papar" value="" placeholder="JAWAPAN"><br><br>
+
+<script>
+            
+            function kira()
+            {
+                var n1 = parseInt(document.getElementById('no1').value);
+                var n2 = parseInt(document.getElementById('no2').value);
+                
+                var operasi = document.getElementById('operasi').value;
+                
+                if(operasi == '+')
+                {
+                    document.getElementById('papar').value = n1+n2;
+                }
+                
+                if(operasi == '-')
+                {
+                    document.getElementById('papar').value = n1-n2;
+                }
+                
+                if(operasi == '*')
+                {
+                    document.getElementById('papar').value = n1*n2;
+                }
+                
+                if(operasi == '/')
+                {
+                    document.getElementById('papar').value = n1/n2;
+                }
+            }
+            
+</script> 
+<input type="text" name="kegunaan" size="20" placeholder="KEGUNAAN"/>
+<br><br>
+<button class="button" type="submit" name="submit">Hantar</button><br><br>
+<a href="login.php" align="right">Logout</a>
+</form>
+</center>
+</body>
+</html>

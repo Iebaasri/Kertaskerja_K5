@@ -1,0 +1,76 @@
+<html>
+<head>
+<title>Data Pengiraan</title>
+<style>
+body {
+    background-color: #80bfff;
+}
+table, td, th {    
+    border: 1px solid black;
+    text-align: left;
+}
+
+table {
+    border-collapse: collapse;
+	width:600px;
+}
+
+th, td {
+    padding: 15px;
+}
+tr:nth-child(even) {
+	background-color:#99ccff;
+}
+h1{
+    font-family: "candara";
+}
+
+p{
+    font-family: "candara";
+}
+a:link, a:visited {
+    background-color: #66b3ff;
+    color: black;
+    padding: 14px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+}
+
+
+a:hover, a:active {
+    background-color: #99ccff;
+}
+</style>
+</head>
+<body>
+<?php
+include('config.php');
+$sql="SELECT * from jawapan";
+$result=mysql_query($sql)or die(mysql_error());
+?>
+
+<center>
+<h1><strong><center>Senarai Jawapan</strong></center></h1>
+<a href="aboutme.php" align="right">Maklumat Pembangun</a>
+<table border="1" align="center" cellspacing="2" cellpadding="2">
+<tr>
+<td align="center"><strong>Hasil Kira</strong></td>
+<td align="center"><strong>Kegunaan</strong></td>
+
+</tr>
+
+<?php
+while($row=mysql_fetch_array($result))
+{
+  echo"<tr>";
+  echo"<br><td>".$row["result"]."</td>";
+  echo"<td>".$row["kegunaan"]."</td>";
+}
+echo"</table>";
+echo"<center>";
+echo"<br>";
+?>
+<a href="login.php" align="right">Logout</a>
+</body>
+</html>

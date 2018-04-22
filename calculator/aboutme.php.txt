@@ -1,0 +1,66 @@
+<body>
+<html>
+<head>
+<title>Maklumat Pembangun</title>
+<style>
+body {
+    background-color: #80bfff;
+}
+h1{
+    font-family: "candara";
+}
+
+h2{
+    font-family: "candara";
+}
+a:link, a:visited {
+    background-color: #66b3ff;
+    color: black;
+    padding: 14px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+}
+
+
+a:hover, a:active {
+    background-color: #99ccff;
+}
+.button {
+    background-color: #66b3ff;
+    border: 1px solid #4da6ff;
+    color: black;
+    padding: 15px 32px;
+    text-align: center;
+    cursor: pointer;
+    text-decoration: none;
+
+}
+</style>
+</head>
+<body>
+<center>
+<h1>Maklumat Pembangun</h1>
+<button class="button" onclick="syahir()" align="left">Syahir</button>
+
+<button class="button" onclick="iba()" align="right">Tsuwaiba</button>
+<br><br><br>
+<img id="gambar" src="syahir.jpg" width="300px" height="300px">
+<br><br><br>
+<script>
+
+function syahir() {
+document.getElementById("gambar").src="syahir.jpg";
+}
+
+function iba() {
+document.getElementById("gambar").src="iba.jpg";
+
+}
+
+</script>
+<a href="login.php" align="right">Logout</a>
+</center>
+</body> 
+</html>
+ 
